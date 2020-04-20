@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2013-2017 Savoir-faire Linux (<http://www.savoirfairelinux.com>)
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="menu_tree" model="ir.ui.view">
+        <field name="name">menu.tree.inherit</field>
+        <field name="model">website.menu</field>
+        <field name="inherit_id" ref="website.menu_tree"/>
+        <field name="arch" type="xml">
+            <field name="new_window" position="after">
+                <field name="user_logged_in"/>
+                <field name="user_not_logged_in"/>
+            </field>
+        </field>
+    </record>
+</odoo>
