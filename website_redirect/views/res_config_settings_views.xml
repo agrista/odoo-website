@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.website.redirect</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="20"/>
+            <field name="inherit_id" ref="website.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='domain_settings']/div/div[hasclass('mt8', 'text-muted')]" position="before">
+                    <div class="text-muted">
+                        Redirect this website when redirected to relative URL
+                    </div>
+                    <div class="mt8">
+                        <field name="website_redirect_domain" placeholder="redirect.odoo.com"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <!-- website views -->
+        <record id="view_website_form" model="ir.ui.view">
+            <field name="name">website.form.inherit.website.redirect</field>
+            <field name="model">website</field>
+            <field name="inherit_id" ref="website.view_website_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='domain']" position="after">
+                    <field name="redirect_domain"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

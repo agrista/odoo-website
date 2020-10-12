@@ -11,11 +11,11 @@ class IrHttp(models.AbstractModel):
     @classmethod
     def _get_website_domain(cls):
         domain = ''
-        if hasattr(request, 'website') and request.website.domain:
-            domain = request.website.domain
+        if hasattr(request, 'website') and request.website.redirect_domain:
+            domain = request.website.redirect_domain
         elif hasattr(request, 'website_routing'):
             website = request.env['website'].get_current_website()
-            domain = website.domain or ''
+            domain = website.redirect_domain or ''
         if domain:
             parsed_url = urls.url_parse(domain)
             if not parsed_url.scheme:

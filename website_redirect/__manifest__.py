@@ -5,7 +5,10 @@
     "version": "13.0.1.0.0",
     "author": "Agrista GmbH,Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "depends": ["payment", "website"],
-    "data": [],
+    "depends": ["base", "website"],
+    "data": [
+        'views/website_views.xml',
+        'views/res_config_settings_views.xml',
+    ],
     "installable": True,
 }
