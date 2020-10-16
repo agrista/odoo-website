@@ -8,9 +8,9 @@ class PaymentAcquirer(models.Model):
 
     def get_base_url(self):
         self.ensure_one()
-        # priority is always given to url_root
-        # from the request
         url = ''
         if 'website_id' in self and self.website_id:
-            url = self.website_id._get_http_domain()
+            url = self.website_id._get_http_redirect_domain(
+            ) if self.website_id.redirect_domain else self.website_id._get_http_domain(
+            )
         return url or super(PaymentAcquirer, self).get_base_url()
