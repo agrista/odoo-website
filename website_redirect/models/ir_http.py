@@ -25,6 +25,7 @@ class IrHttp(models.AbstractModel):
     @classmethod
     def _dispatch(cls):
         result = super(IrHttp, cls)._dispatch()
-        if result.location and result.location.startswith('/'):
+        if hasattr(result, 'location'
+                   ) and result.location and result.location.startswith('/'):
             result.location = cls._get_website_domain() + result.location
         return result
